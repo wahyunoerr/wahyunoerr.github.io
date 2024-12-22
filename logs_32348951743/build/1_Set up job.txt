@@ -1,0 +1,30 @@
+﻿2024-12-22T05:28:36.2934481Z Current runner version: '2.321.0'
+2024-12-22T05:28:36.2965150Z ##[group]Operating System
+2024-12-22T05:28:36.2965879Z Ubuntu
+2024-12-22T05:28:36.2966465Z 24.04.1
+2024-12-22T05:28:36.2966955Z LTS
+2024-12-22T05:28:36.2967372Z ##[endgroup]
+2024-12-22T05:28:36.2968070Z ##[group]Runner Image
+2024-12-22T05:28:36.2968614Z Image: ubuntu-24.04
+2024-12-22T05:28:36.2969117Z Version: 20241215.1.0
+2024-12-22T05:28:36.2970145Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20241215.1/images/ubuntu/Ubuntu2404-Readme.md
+2024-12-22T05:28:36.2971555Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20241215.1
+2024-12-22T05:28:36.2972411Z ##[endgroup]
+2024-12-22T05:28:36.2972870Z ##[group]Runner Image Provisioner
+2024-12-22T05:28:36.2973527Z 2.0.404.1
+2024-12-22T05:28:36.2973975Z ##[endgroup]
+2024-12-22T05:28:36.2975085Z ##[group]GITHUB_TOKEN Permissions
+2024-12-22T05:28:36.2976937Z Contents: read
+2024-12-22T05:28:36.2977441Z Metadata: read
+2024-12-22T05:28:36.2978137Z Pages: write
+2024-12-22T05:28:36.2979028Z ##[endgroup]
+2024-12-22T05:28:36.2981070Z Secret source: Actions
+2024-12-22T05:28:36.2981765Z Prepare workflow directory
+2024-12-22T05:28:36.3325756Z Prepare all required actions
+2024-12-22T05:28:36.3366345Z Getting action download info
+2024-12-22T05:28:36.8340017Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2024-12-22T05:28:36.9359947Z Download action repository 'actions/jekyll-build-pages@v1' (SHA:44a6e6beabd48582f863aeeb6cb2151cc1716697)
+2024-12-22T05:28:37.7272624Z Download action repository 'actions/upload-pages-artifact@v3' (SHA:56afc609e74202658d3ffba0e8f6dda462b719fa)
+2024-12-22T05:28:38.3147082Z Getting action download info
+2024-12-22T05:28:38.4509039Z Download action repository 'actions/upload-artifact@v4' (SHA:6f51ac03b9356f520e9adb1b1b7802705f340c2b)
+2024-12-22T05:28:39.3598805Z Complete job name: build

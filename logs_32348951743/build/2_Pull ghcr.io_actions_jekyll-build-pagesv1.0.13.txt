@@ -1,0 +1,53 @@
+﻿2024-12-22T05:28:39.4015845Z ##[group]Pull down action image 'ghcr.io/actions/jekyll-build-pages:v1.0.13'
+2024-12-22T05:28:39.4062365Z ##[command]/usr/bin/docker pull ghcr.io/actions/jekyll-build-pages:v1.0.13
+2024-12-22T05:28:40.2565384Z v1.0.13: Pulling from actions/jekyll-build-pages
+2024-12-22T05:28:40.2565979Z efc2b5ad9eec: Pulling fs layer
+2024-12-22T05:28:40.2566366Z 165b60d1bb48: Pulling fs layer
+2024-12-22T05:28:40.2566706Z 2a328af1ca3a: Pulling fs layer
+2024-12-22T05:28:40.2567040Z 32b58fa44788: Pulling fs layer
+2024-12-22T05:28:40.2567387Z 590ab93c22d2: Pulling fs layer
+2024-12-22T05:28:40.2567592Z 26ea96c4c14c: Pulling fs layer
+2024-12-22T05:28:40.2568003Z bd7e451dfea1: Pulling fs layer
+2024-12-22T05:28:40.2568310Z c209e9dadc51: Pulling fs layer
+2024-12-22T05:28:40.2568530Z a4925b5c711a: Pulling fs layer
+2024-12-22T05:28:40.2568751Z cd9459784e3c: Pulling fs layer
+2024-12-22T05:28:40.2568943Z 32b58fa44788: Waiting
+2024-12-22T05:28:40.2569130Z bd7e451dfea1: Waiting
+2024-12-22T05:28:40.2569314Z c209e9dadc51: Waiting
+2024-12-22T05:28:40.2569553Z a4925b5c711a: Waiting
+2024-12-22T05:28:40.2569730Z cd9459784e3c: Waiting
+2024-12-22T05:28:40.2569902Z 590ab93c22d2: Waiting
+2024-12-22T05:28:40.2570066Z 26ea96c4c14c: Waiting
+2024-12-22T05:28:40.4736742Z 2a328af1ca3a: Verifying Checksum
+2024-12-22T05:28:40.4737384Z 2a328af1ca3a: Download complete
+2024-12-22T05:28:40.5481910Z 165b60d1bb48: Verifying Checksum
+2024-12-22T05:28:40.5482465Z 165b60d1bb48: Download complete
+2024-12-22T05:28:40.6145224Z efc2b5ad9eec: Verifying Checksum
+2024-12-22T05:28:40.6145746Z efc2b5ad9eec: Download complete
+2024-12-22T05:28:40.7771705Z 590ab93c22d2: Verifying Checksum
+2024-12-22T05:28:40.7773090Z 590ab93c22d2: Download complete
+2024-12-22T05:28:40.8689903Z 32b58fa44788: Verifying Checksum
+2024-12-22T05:28:40.8690765Z 32b58fa44788: Download complete
+2024-12-22T05:28:41.0040258Z bd7e451dfea1: Download complete
+2024-12-22T05:28:41.2723365Z a4925b5c711a: Verifying Checksum
+2024-12-22T05:28:41.2725836Z a4925b5c711a: Download complete
+2024-12-22T05:28:41.2822064Z c209e9dadc51: Verifying Checksum
+2024-12-22T05:28:41.2822661Z c209e9dadc51: Download complete
+2024-12-22T05:28:41.4150495Z 26ea96c4c14c: Verifying Checksum
+2024-12-22T05:28:41.4151026Z 26ea96c4c14c: Download complete
+2024-12-22T05:28:41.5002259Z cd9459784e3c: Verifying Checksum
+2024-12-22T05:28:41.5002802Z cd9459784e3c: Download complete
+2024-12-22T05:28:41.8557157Z efc2b5ad9eec: Pull complete
+2024-12-22T05:28:43.2601972Z 165b60d1bb48: Pull complete
+2024-12-22T05:28:43.2772501Z 2a328af1ca3a: Pull complete
+2024-12-22T05:28:44.2356858Z 32b58fa44788: Pull complete
+2024-12-22T05:28:44.2494622Z 590ab93c22d2: Pull complete
+2024-12-22T05:28:48.2085721Z 26ea96c4c14c: Pull complete
+2024-12-22T05:28:48.2198276Z bd7e451dfea1: Pull complete
+2024-12-22T05:28:50.2060144Z c209e9dadc51: Pull complete
+2024-12-22T05:28:50.2315088Z a4925b5c711a: Pull complete
+2024-12-22T05:28:50.2409093Z cd9459784e3c: Pull complete
+2024-12-22T05:28:50.2444753Z Digest: sha256:6791ebfd912185ed59bfb5fb102664fa872496b79f87ff8b9cfba292a7345041
+2024-12-22T05:28:50.2458543Z Status: Downloaded newer image for ghcr.io/actions/jekyll-build-pages:v1.0.13
+2024-12-22T05:28:50.2470989Z ghcr.io/actions/jekyll-build-pages:v1.0.13
+2024-12-22T05:28:50.2493983Z ##[endgroup]
