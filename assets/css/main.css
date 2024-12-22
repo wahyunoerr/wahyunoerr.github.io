@@ -2122,7 +2122,7 @@ p {
     transition: all 0.4s !important;
     transform-origin: top;
     max-height: calc(100vh - 130px);
-    background: var(--subtitle);
+    background: #ffffff;
     overflow-y: auto;
   }
   .main-menu:not(.active) {
