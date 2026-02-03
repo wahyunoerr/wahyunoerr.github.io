@@ -93,3 +93,99 @@
     -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
   }
 }
+
+/* ==========================================
+   SCROLL-TRIGGERED ANIMATIONS
+   Menggunakan GPU acceleration (transform & opacity)
+   untuk performa optimal tanpa lag
+   ========================================== */
+
+/* State tersembunyi (sebelum masuk viewport) */
+.scroll-hidden {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* State terlihat (setelah masuk viewport) */
+.scroll-visible {
+  opacity: 1;
+}
+
+/* Animasi: Fade Up (default) */
+.scroll-hidden[data-scroll-animation="fade-up"] {
+  transform: translateY(30px);
+}
+.scroll-visible[data-scroll-animation="fade-up"] {
+  transform: translateY(0);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Animasi: Fade Down */
+.scroll-hidden[data-scroll-animation="fade-down"] {
+  transform: translateY(-30px);
+}
+.scroll-visible[data-scroll-animation="fade-down"] {
+  transform: translateY(0);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Animasi: Fade Left */
+.scroll-hidden[data-scroll-animation="fade-left"] {
+  transform: translateX(30px);
+}
+.scroll-visible[data-scroll-animation="fade-left"] {
+  transform: translateX(0);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Animasi: Fade Right */
+.scroll-hidden[data-scroll-animation="fade-right"] {
+  transform: translateX(-30px);
+}
+.scroll-visible[data-scroll-animation="fade-right"] {
+  transform: translateX(0);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Animasi: Fade (hanya opacity) */
+.scroll-hidden[data-scroll-animation="fade"] {
+  transform: none;
+}
+.scroll-visible[data-scroll-animation="fade"] {
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Animasi: Scale Up */
+.scroll-hidden[data-scroll-animation="scale-up"] {
+  transform: scale(0.95);
+}
+.scroll-visible[data-scroll-animation="scale-up"] {
+  transform: scale(1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Animasi: Zoom In */
+.scroll-hidden[data-scroll-animation="zoom-in"] {
+  transform: scale(0.8);
+}
+.scroll-visible[data-scroll-animation="zoom-in"] {
+  transform: scale(1);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Disable animasi untuk pengguna yang prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hidden {
+    opacity: 1;
+    transform: none;
+  }
+  .scroll-visible {
+    transition: none;
+  }
+}

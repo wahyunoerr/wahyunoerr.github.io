@@ -4,22 +4,25 @@
     
     <div class="container-custom relative z-10">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6">
+        <div 
+          v-scroll-animate="'fade-up'" 
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6"
+        >
           <span class="text-xs font-semibold text-accent uppercase tracking-wider">Portfolio</span>
         </div>
         
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+        <h2 v-scroll-animate:100="'fade-up'" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
           Proyek 
           <span class="text-gradient">Terbaru</span>
         </h2>
         
-        <p class="text-zinc-400 leading-relaxed">
+        <p v-scroll-animate:200="'fade-up'" class="text-zinc-400 leading-relaxed">
           Beberapa proyek yang telah saya kerjakan, mulai dari sistem informasi, 
           e-commerce, hingga aplikasi manajemen inventori.
         </p>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-2 mb-12">
+      <div v-scroll-animate:300="'fade-up'" class="flex flex-wrap justify-center gap-2 mb-12">
         <button 
           v-for="category in categories" 
           :key="category"
@@ -45,8 +48,10 @@
           leave-to-class="opacity-0 scale-95"
         >
           <div 
-            v-for="project in filteredProjects" 
+            v-for="(project, index) in filteredProjects" 
             :key="project.title"
+            v-scroll-animate="'fade-up'"
+            :style="{ transitionDelay: `${index * 100}ms` }"
             class="group"
           >
             <div class="card card-hover h-full flex flex-col">

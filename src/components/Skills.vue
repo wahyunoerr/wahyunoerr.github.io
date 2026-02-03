@@ -4,16 +4,19 @@
     
     <div class="container-custom relative z-10">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6">
+        <div 
+          v-scroll-animate="'fade-up'" 
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6"
+        >
           <span class="text-xs font-semibold text-accent uppercase tracking-wider">Keahlian</span>
         </div>
         
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+        <h2 v-scroll-animate:100="'fade-up'" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
           Teknologi yang Saya 
           <span class="text-gradient">Kuasai</span>
         </h2>
         
-        <p class="text-zinc-400 leading-relaxed">
+        <p v-scroll-animate:200="'fade-up'" class="text-zinc-400 leading-relaxed">
           Berikut adalah teknologi dan tools yang saya gunakan untuk membangun 
           aplikasi web modern dan solusi digital berkualitas tinggi.
         </p>
@@ -23,12 +26,13 @@
         <div 
           v-for="(skill, index) in skills" 
           :key="skill.name"
+          v-scroll-animate="'fade-up'"
+          :style="{ transitionDelay: `${index * 75}ms` }"
           class="group"
         >
           <div 
             class="relative h-full p-6 rounded-2xl bg-secondary/50 border border-white/5 
                    hover:border-accent/30 transition-all duration-500 hover:-translate-y-1"
-            :style="{ animationDelay: `${index * 100}ms` }"
           >
             <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
@@ -55,12 +59,12 @@
       </div>
 
       <div class="mt-20">
-        <div class="text-center mb-10">
+        <div v-scroll-animate="'fade-up'" class="text-center mb-10">
           <h3 class="text-xl font-semibold text-white mb-2">Tools & Environment</h3>
           <p class="text-zinc-500 text-sm">Software pendukung yang saya gunakan sehari-hari</p>
         </div>
         
-        <div class="flex flex-wrap justify-center gap-4">
+        <div v-scroll-animate:100="'fade-up'" class="flex flex-wrap justify-center gap-4">
           <div 
             v-for="tool in tools" 
             :key="tool"

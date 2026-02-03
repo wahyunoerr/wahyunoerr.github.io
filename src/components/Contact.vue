@@ -8,16 +8,19 @@
     <div class="container-custom relative z-10">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-16">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6">
+          <div 
+            v-scroll-animate="'fade-up'" 
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6"
+          >
             <span class="text-xs font-semibold text-accent uppercase tracking-wider">Kontak</span>
           </div>
           
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+          <h2 v-scroll-animate:100="'fade-up'" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
             Mari Bekerja
             <span class="text-gradient">Bersama</span>
           </h2>
           
-          <p class="text-zinc-400 leading-relaxed max-w-xl mx-auto">
+          <p v-scroll-animate:200="'fade-up'" class="text-zinc-400 leading-relaxed max-w-xl mx-auto">
             Tertarik untuk berkolaborasi atau punya proyek yang ingin didiskusikan? 
             Jangan ragu untuk menghubungi saya.
           </p>
@@ -25,10 +28,12 @@
 
         <div class="grid md:grid-cols-3 gap-6 mb-12">
           <a 
-            v-for="contact in contacts" 
+            v-for="(contact, index) in contacts" 
             :key="contact.label"
             :href="contact.href"
             target="_blank"
+            v-scroll-animate="'fade-up'"
+            :style="{ transitionDelay: `${index * 100}ms` }"
             class="group"
           >
             <div class="h-full p-6 rounded-2xl bg-secondary/50 border border-white/5 hover:border-accent/30 
@@ -48,7 +53,7 @@
           </a>
         </div>
 
-        <div class="text-center">
+        <div v-scroll-animate:400="'scale-up'" class="text-center">
           <p class="text-zinc-500 mb-6">Atau langsung kirim pesan via WhatsApp</p>
           <a 
             href="https://wa.me/6282286203247?text=Halo%20Wahyu,%20saya%20tertarik%20untuk%20berdiskusi%20tentang%20proyek." 

@@ -4,7 +4,7 @@
     
     <div class="container-custom relative z-10">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div class="relative">
+        <div class="relative" v-scroll-animate="'fade-right'">
           <div class="absolute -inset-4 bg-gradient-to-br from-accent/20 to-transparent rounded-3xl blur-2xl opacity-30"></div>
           <div class="relative aspect-[4/5] rounded-3xl overflow-hidden">
             <img 
@@ -15,7 +15,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent"></div>
           </div>
           
-          <div class="absolute -bottom-6 -right-6 lg:-right-12">
+          <div class="absolute -bottom-6 -right-6 lg:-right-12" v-scroll-animate:300="'scale-up'">
             <div class="glass rounded-2xl p-6">
               <div class="flex items-center gap-4">
                 <div class="w-14 h-14 rounded-xl bg-accent flex items-center justify-center">
@@ -33,16 +33,22 @@
         </div>
 
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6">
+          <div 
+            v-scroll-animate="'fade-up'" 
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6"
+          >
             <span class="text-xs font-semibold text-accent uppercase tracking-wider">Tentang Saya</span>
           </div>
 
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6 leading-tight">
+          <h2 
+            v-scroll-animate:100="'fade-up'" 
+            class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6 leading-tight"
+          >
             Membangun Solusi Digital yang 
             <span class="text-gradient">Bermakna</span>
           </h2>
 
-          <div class="space-y-4 text-zinc-400 leading-relaxed mb-8">
+          <div v-scroll-animate:200="'fade-up'" class="space-y-4 text-zinc-400 leading-relaxed mb-8">
             <p>
               Saya Wahyu Nur, seorang Web Developer yang berbasis di Pekanbaru, Indonesia. 
               Saya memiliki keahlian kuat dalam pemrograman PHP, dengan spesialisasi pada 
@@ -56,7 +62,7 @@
             </p>
           </div>
 
-          <div class="grid sm:grid-cols-2 gap-4 mb-8">
+          <div v-scroll-animate:300="'fade-up'" class="grid sm:grid-cols-2 gap-4 mb-8">
             <div v-for="info in personalInfo" :key="info.label" class="group">
               <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-accent/30 transition-all duration-300">
                 <p class="text-xs text-zinc-500 uppercase tracking-wider mb-1">{{ info.label }}</p>
@@ -72,7 +78,7 @@
             </div>
           </div>
 
-          <div class="flex flex-wrap gap-4">
+          <div v-scroll-animate:400="'fade-up'" class="flex flex-wrap gap-4">
             <a href="#projects" class="btn-primary">
               <span>Lihat Portfolio</span>
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
