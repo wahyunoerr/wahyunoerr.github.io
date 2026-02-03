@@ -77,7 +77,7 @@
             <div
               class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border-2 border-white/10"
             >
-              <img src="/assets/img/profile.png" alt="Wahyu Nur" class="w-full h-full object-cover" />
+              <img src="/assets/img/profile-removebg.png" alt="Wahyu Nur" class="w-full h-full object-cover" />
               <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
             </div>
 
