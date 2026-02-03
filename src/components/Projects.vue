@@ -60,6 +60,7 @@
                   :src="project.image" 
                   :alt="project.title"
                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-transparent opacity-60"></div>
                 
@@ -108,52 +109,64 @@
       </div>
     </div>
 
+    <!-- Modal with smooth animations -->
     <Teleport to="body">
-      <Transition
-        enter-active-class="transition duration-300 ease-out"
-        enter-from-class="opacity-0"
-        enter-to-class="opacity-100"
-        leave-active-class="transition duration-200 ease-in"
-        leave-from-class="opacity-100"
-        leave-to-class="opacity-0"
-      >
+      <Transition name="modal">
         <div 
           v-if="modalOpen" 
-          class="fixed inset-0 z-50 flex items-center justify-center p-4"
+          class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8"
           @click.self="closeModal"
+          @keydown.esc="closeModal"
         >
-          <div class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+          <!-- Backdrop -->
+          <div 
+            class="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            @click="closeModal"
+          ></div>
           
-          <div class="relative max-w-4xl w-full max-h-[90vh] overflow-auto rounded-2xl bg-secondary border border-white/10">
+          <!-- Modal Content -->
+          <div 
+            class="modal-content relative w-full max-w-4xl max-h-[90vh] rounded-2xl bg-secondary border border-white/10 shadow-2xl overflow-hidden flex flex-col"
+          >
+            <!-- Close Button -->
             <button 
               @click="closeModal"
-              class="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+              class="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/50 backdrop-blur-sm text-white 
+                     hover:bg-accent hover:text-primary transition-all duration-300"
+              aria-label="Close modal"
             >
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
             
-            <img 
-              v-if="selectedProject"
-              :src="selectedProject.image" 
-              :alt="selectedProject.title"
-              class="w-full aspect-video object-cover"
-            />
+            <!-- Image Container -->
+            <div v-if="selectedProject" class="relative w-full flex-shrink-0">
+              <div class="relative w-full" style="padding-bottom: 56.25%;">
+                <img 
+                  :src="selectedProject.image" 
+                  :alt="selectedProject.title"
+                  class="absolute inset-0 w-full h-full object-contain bg-black/50"
+                />
+              </div>
+              <!-- Gradient overlay -->
+              <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-secondary to-transparent"></div>
+            </div>
             
-            <div class="p-6" v-if="selectedProject">
+            <!-- Content -->
+            <div class="p-6 overflow-y-auto flex-1" v-if="selectedProject">
               <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-accent/20 text-accent mb-4">
                 {{ selectedProject.category }}
               </span>
               
               <h3 class="text-2xl font-bold text-white mb-3">{{ selectedProject.title }}</h3>
-              <p class="text-zinc-400 mb-6">{{ selectedProject.fullDescription }}</p>
+              <p class="text-zinc-400 mb-6 leading-relaxed">{{ selectedProject.fullDescription }}</p>
               
               <div class="flex flex-wrap gap-2">
                 <span 
                   v-for="tech in selectedProject.tech" 
                   :key="tech"
-                  class="px-3 py-1.5 rounded-lg text-sm bg-white/5 text-zinc-300"
+                  class="px-3 py-1.5 rounded-lg text-sm bg-white/5 text-zinc-300 border border-white/5"
                 >
                   {{ tech }}
                 </span>
@@ -167,7 +180,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 
 const activeCategory = ref('Semua')
 const modalOpen = ref(false)
@@ -265,7 +278,19 @@ const filteredProjects = computed(() => {
   return projects.filter(p => p.category === activeCategory.value)
 })
 
-const openModal = (project) => {
+// Preload image before opening modal
+const preloadImage = (src) => {
+  return new Promise((resolve) => {
+    const img = new Image()
+    img.onload = resolve
+    img.onerror = resolve
+    img.src = src
+  })
+}
+
+const openModal = async (project) => {
+  // Preload image first to prevent lag
+  await preloadImage(project.image)
   selectedProject.value = project
   modalOpen.value = true
   document.body.style.overflow = 'hidden'
@@ -273,7 +298,68 @@ const openModal = (project) => {
 
 const closeModal = () => {
   modalOpen.value = false
-  selectedProject.value = null
+  // Delay clearing selected project until animation completes
+  setTimeout(() => {
+    selectedProject.value = null
+  }, 300)
   document.body.style.overflow = ''
 }
+
+// Handle ESC key
+const handleKeydown = (e) => {
+  if (e.key === 'Escape' && modalOpen.value) {
+    closeModal()
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('keydown', handleKeydown)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('keydown', handleKeydown)
+  document.body.style.overflow = ''
+})
 </script>
+
+<style scoped>
+/* Modal Transitions - GPU Accelerated */
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-enter-active .modal-content,
+.modal-leave-active .modal-content {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
+
+.modal-enter-from .modal-content,
+.modal-leave-to .modal-content {
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+}
+
+.modal-enter-to,
+.modal-leave-from {
+  opacity: 1;
+}
+
+.modal-enter-to .modal-content,
+.modal-leave-from .modal-content {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Ensure smooth rendering */
+.modal-content {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+</style>
