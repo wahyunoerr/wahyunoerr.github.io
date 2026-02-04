@@ -1,98 +1,92 @@
 <template>
   <section class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Background Effects -->
     <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute top-1/4 -left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-accent/20 rounded-full blur-3xl opacity-30"></div>
-      <div class="absolute bottom-1/4 -right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-amber-500/20 rounded-full blur-3xl opacity-20"></div>
+      <div class="absolute top-1/4 -left-1/4 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-accent/20 rounded-full blur-3xl opacity-30"></div>
+      <div class="absolute bottom-1/4 -right-1/4 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-amber-500/20 rounded-full blur-3xl opacity-20"></div>
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#0a0a0a_70%)]"></div>
     </div>
 
+    <!-- Noise Texture -->
     <div
       class="absolute inset-0 opacity-[0.015]"
-      style="
-        background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E&quot;);
-      "
+      style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E&quot;);"
     ></div>
 
-    <div class="container-custom relative z-10 pt-20 sm:pt-24 pb-8">
-      <div class="grid lg:grid-cols-2 gap-8 lg:gap-8 items-center">
+    <div class="container-custom relative z-10 pt-24 sm:pt-28 lg:pt-24 pb-12 sm:pb-16">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+        
+        <!-- Text Content -->
         <div class="order-2 lg:order-1 text-center lg:text-left">
-          <div
-            class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-accent/10 border border-accent/20 mb-4 sm:mb-6 animate-fade-in"
-          >
+          <!-- Status Badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-5 animate-fade-in">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
             </span>
-            <span class="text-xs sm:text-sm font-medium text-accent">Open to Work</span>
+            <span class="text-xs font-medium text-accent">Open to Work</span>
           </div>
 
-          <h1
-            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight mb-4 sm:mb-6 animate-slide-up"
-          >
+          <!-- Heading -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-[1.1] mb-5 animate-slide-up">
             <span class="text-white">Full-Stack</span>
             <br />
             <span class="text-gradient" data-text="Web Developer">Web Developer</span>
           </h1>
 
-          <p
-            class="text-base sm:text-lg text-zinc-400 max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-8 leading-relaxed animate-slide-up animate-delay-200 px-2 sm:px-0"
-          >
+          <!-- Description -->
+          <p class="text-sm sm:text-base lg:text-lg text-zinc-400 max-w-xl mx-auto lg:mx-0 mb-7 leading-relaxed animate-slide-up animate-delay-200">
             I build scalable, high-performance web applications using
             <span class="text-white font-medium">Laravel</span> and modern technologies. Passionate about clean code,
             efficient systems, and delivering real business value.
           </p>
 
-          <div
-            class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-12 animate-slide-up animate-delay-300 px-4 sm:px-0"
-          >
-            <a href="#projects" class="btn-primary justify-center sm:justify-start">
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-10 animate-slide-up animate-delay-300">
+            <a href="#projects" class="btn-primary justify-center">
               <span>View My Work</span>
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
             </a>
-            <a href="#contact" class="btn-secondary justify-center sm:justify-start">
+            <a href="#contact" class="btn-secondary justify-center">
               <span>Get In Touch</span>
             </a>
           </div>
 
-          <div class="flex items-center gap-4 sm:gap-6 justify-center lg:justify-start animate-fade-in animate-delay-400">
+          <!-- Social Links -->
+          <div class="flex items-center gap-3 justify-center lg:justify-start animate-fade-in animate-delay-400">
             <a
               v-for="social in socials"
               :key="social.name"
               :href="social.url"
               target="_blank"
               :aria-label="social.name"
-              class="p-2.5 sm:p-3 rounded-full bg-white/5 border border-white/10 text-zinc-400 hover:text-accent hover:border-accent/50 hover:bg-accent/10 transition-all duration-300"
+              class="p-2.5 rounded-full bg-white/5 border border-white/10 text-zinc-400 hover:text-accent hover:border-accent/50 hover:bg-accent/10 transition-all duration-300"
             >
               <component :is="social.icon" class="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
           </div>
         </div>
 
+        <!-- Profile Image Section -->
         <div class="order-1 lg:order-2 flex justify-center animate-scale-in animate-delay-200">
-          <div class="relative">
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-accent/30 to-amber-600/30 rounded-3xl blur-2xl opacity-40 animate-pulse-slow"
-            ></div>
-            <div
-              class="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border-2 border-white/10"
-            >
+          <div class="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[400px]">
+            <!-- Glow Effect -->
+            <div class="absolute inset-0 bg-gradient-to-br from-accent/30 to-amber-600/30 rounded-3xl blur-2xl opacity-40 animate-pulse-slow"></div>
+            
+            <!-- Profile Image -->
+            <div class="relative aspect-square rounded-3xl overflow-hidden border-2 border-white/10">
               <img src="/assets/img/profile-removebg.png" alt="Wahyu Nur" class="w-full h-full object-cover" />
               <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
             </div>
 
-            <!-- Experience Badge - Repositioned for mobile -->
-            <div class="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 px-3 sm:px-5 py-2 sm:py-3 glass rounded-lg sm:rounded-xl animate-slide-up animate-delay-500">
-              <div class="flex items-center gap-2 sm:gap-3">
+            <!-- Experience Badge -->
+            <div class="absolute -bottom-4 -right-2 sm:-right-4 glass rounded-xl px-3 py-2 sm:px-4 sm:py-3 animate-slide-up animate-delay-500">
+              <div class="flex items-center gap-2">
                 <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-accent/20 flex items-center justify-center">
                   <svg class="w-4 h-4 sm:w-5 sm:h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
@@ -102,17 +96,12 @@
               </div>
             </div>
 
-            <!-- Projects Badge - Repositioned for mobile -->
-            <div class="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 px-3 sm:px-5 py-2 sm:py-3 glass rounded-lg sm:rounded-xl animate-slide-up animate-delay-400">
-              <div class="flex items-center gap-2 sm:gap-3">
+            <!-- Projects Badge -->
+            <div class="absolute -top-4 -left-2 sm:-left-4 glass rounded-xl px-3 py-2 sm:px-4 sm:py-3 animate-slide-up animate-delay-400">
+              <div class="flex items-center gap-2">
                 <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-accent/20 flex items-center justify-center">
                   <svg class="w-4 h-4 sm:w-5 sm:h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                   </svg>
                 </div>
                 <div>
@@ -125,6 +114,7 @@
         </div>
       </div>
 
+      <!-- Scroll Indicator - Desktop Only -->
       <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block">
         <a href="#about" class="flex flex-col items-center gap-2 text-zinc-500 hover:text-accent transition-colors">
           <span class="text-xs uppercase tracking-widest">Scroll</span>

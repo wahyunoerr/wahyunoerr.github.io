@@ -1,34 +1,38 @@
 <template>
-  <footer class="relative pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-8 border-t border-white/5">
+  <footer class="relative pt-12 sm:pt-16 pb-6 border-t border-white/5">
     <div class="absolute inset-0 bg-gradient-to-t from-secondary/50 to-transparent"></div>
 
     <div class="container-custom relative z-10">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12 md:mb-16">
-        <div class="sm:col-span-2 md:col-span-1">
-          <a href="#" class="inline-block text-xl sm:text-2xl font-display font-bold tracking-tight mb-3 sm:mb-4">
+      <!-- Main Footer Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10">
+        
+        <!-- Brand Section -->
+        <div class="col-span-2 sm:col-span-2 lg:col-span-1">
+          <a href="#" class="inline-block text-xl font-display font-bold tracking-tight mb-3">
             <span class="text-white">wnur</span>
             <span class="text-accent">.id</span>
           </a>
-          <p class="text-zinc-500 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
+          <p class="text-zinc-500 text-xs sm:text-sm leading-relaxed mb-4">
             Full-Stack Web Developer passionate about building efficient and user-friendly digital solutions.
           </p>
-          <div class="flex items-center gap-2 sm:gap-3">
+          <div class="flex items-center gap-2">
             <a
               v-for="social in socials"
               :key="social.name"
               :href="social.url"
               target="_blank"
               :aria-label="social.name"
-              class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-accent hover:border-accent/50 hover:bg-accent/10 transition-all duration-300"
+              class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-accent hover:border-accent/50 hover:bg-accent/10 transition-all duration-300"
             >
-              <component :is="social.icon" class="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <component :is="social.icon" class="w-4 h-4" />
             </a>
           </div>
         </div>
 
+        <!-- Quick Links -->
         <div>
-          <h4 class="text-white font-semibold text-sm sm:text-base mb-3 sm:mb-4">Quick Links</h4>
-          <ul class="space-y-2 sm:space-y-3">
+          <h4 class="text-white font-semibold text-sm mb-4">Quick Links</h4>
+          <ul class="space-y-2.5">
             <li v-for="link in quickLinks" :key="link.label">
               <a :href="link.href" class="text-zinc-500 hover:text-accent transition-colors text-xs sm:text-sm">
                 {{ link.label }}
@@ -37,15 +41,16 @@
           </ul>
         </div>
 
-        <div>
-          <h4 class="text-white font-semibold text-sm sm:text-base mb-3 sm:mb-4">Contact</h4>
-          <ul class="space-y-2 sm:space-y-3">
+        <!-- Contact Info -->
+        <div class="col-span-2 sm:col-span-1">
+          <h4 class="text-white font-semibold text-sm mb-4">Contact</h4>
+          <ul class="space-y-2.5">
             <li>
               <a
                 href="mailto:wahyunoer1001@gmail.com"
-                class="text-zinc-500 hover:text-accent transition-colors text-xs sm:text-sm flex items-center gap-2"
+                class="text-zinc-500 hover:text-accent transition-colors text-xs sm:text-sm flex items-start gap-2"
               >
-                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="w-4 h-4 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -62,7 +67,7 @@
                 target="_blank"
                 class="text-zinc-500 hover:text-accent transition-colors text-xs sm:text-sm flex items-center gap-2"
               >
-                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -70,11 +75,11 @@
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
-                +62 822 8620 3247
+                <span>+62 822 8620 3247</span>
               </a>
             </li>
             <li class="text-zinc-500 text-xs sm:text-sm flex items-center gap-2">
-              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -88,15 +93,16 @@
                   d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                 />
               </svg>
-              Pekanbaru, Riau, Indonesia
+              <span>Pekanbaru, Riau</span>
             </li>
           </ul>
         </div>
       </div>
 
-      <div class="pt-6 sm:pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
-        <p class="text-zinc-600 text-xs sm:text-sm">&copy; {{ currentYear }} Wahyu Nur. All rights reserved.</p>
-        <p class="text-zinc-600 text-xs sm:text-sm">Built with Vue.js & Tailwind CSS</p>
+      <!-- Copyright -->
+      <div class="pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
+        <p class="text-zinc-600 text-xs">&copy; {{ currentYear }} Wahyu Nur. All rights reserved.</p>
+        <p class="text-zinc-600 text-xs">Built with Vue.js & Tailwind CSS</p>
       </div>
     </div>
   </footer>
@@ -145,7 +151,7 @@ const socials = [
 
 const quickLinks = [
   { label: 'Home', href: '#' },
-  { label: 'About Me', href: '#about' },
+  { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Portfolio', href: '#projects' },
   { label: 'Contact', href: '#contact' },

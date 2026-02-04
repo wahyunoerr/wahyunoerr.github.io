@@ -1,15 +1,17 @@
 <template>
   <nav
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-    :class="[scrolled ? 'py-3 glass-dark' : 'py-5 bg-transparent']"
+    :class="[scrolled ? 'py-2 sm:py-3 glass-dark' : 'py-3 sm:py-5 bg-transparent']"
   >
     <div class="container-custom">
       <div class="flex items-center justify-between">
-        <a href="#" class="text-xl font-display font-bold tracking-tight">
+        <!-- Logo -->
+        <a href="#" class="text-lg sm:text-xl font-display font-bold tracking-tight">
           <span class="text-white">wnur</span>
           <span class="text-accent">.id</span>
         </a>
 
+        <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center gap-1">
           <a
             v-for="link in navLinks"
@@ -27,7 +29,12 @@
           </a>
         </div>
 
-        <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 text-white">
+        <!-- Mobile Menu Button -->
+        <button 
+          @click="mobileMenuOpen = !mobileMenuOpen" 
+          class="md:hidden p-2 -mr-2 text-white"
+          aria-label="Toggle menu"
+        >
           <svg v-if="!mobileMenuOpen" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -37,6 +44,7 @@
         </button>
       </div>
 
+      <!-- Mobile Menu -->
       <Transition
         enter-active-class="transition duration-300 ease-out"
         enter-from-class="opacity-0 -translate-y-2"
@@ -45,18 +53,22 @@
         leave-from-class="opacity-100 translate-y-0"
         leave-to-class="opacity-0 -translate-y-2"
       >
-        <div v-show="mobileMenuOpen" class="md:hidden mt-4 pb-4 border-t border-white/10">
-          <div class="flex flex-col gap-1 pt-4">
+        <div v-show="mobileMenuOpen" class="md:hidden mt-3 pb-4 border-t border-white/10">
+          <div class="flex flex-col gap-1 pt-3">
             <a
               v-for="link in navLinks"
               :key="link.href"
               :href="link.href"
               @click="mobileMenuOpen = false"
-              class="px-4 py-3 text-sm font-medium text-zinc-400 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-300"
+              class="px-4 py-2.5 text-sm font-medium text-zinc-400 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-300"
             >
               {{ link.label }}
             </a>
-            <a href="#contact" @click="mobileMenuOpen = false" class="mt-2 btn-primary text-sm justify-center">
+            <a 
+              href="#contact" 
+              @click="mobileMenuOpen = false" 
+              class="mt-2 mx-4 btn-primary text-sm justify-center"
+            >
               Hire Me
             </a>
           </div>
