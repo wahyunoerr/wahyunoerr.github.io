@@ -43,7 +43,7 @@
   .text-gradient {
     position: relative;
     display: inline-block;
-    background: linear-gradient(90deg, #D4A574, #FFD700, #FFFFFF, #FFD700, #D4A574);
+    background: linear-gradient(90deg, #D4A574, #FCD34D, #D4A574);
     background-size: 400% 100%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -58,7 +58,7 @@
     left: 0;
     top: 0;
     z-index: -1;
-    background: linear-gradient(90deg, #D4A574, #FFD700, #FFFFFF, #FFD700, #D4A574);
+    background: linear-gradient(90deg, #D4A574, #FCD34D, #D4A574);
     background-size: 400% 100%;
     -webkit-background-clip: text;
     background-clip: text;
