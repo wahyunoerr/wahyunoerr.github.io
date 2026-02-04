@@ -55,6 +55,7 @@ export default {
       },
       backgroundSize: {
         '300%': '300%',
+        '400%': '400%',
       },
     },
   },
