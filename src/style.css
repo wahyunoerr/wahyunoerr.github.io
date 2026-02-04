@@ -35,13 +35,14 @@
 
 @layer components {
   .text-gradient {
-    background: linear-gradient(90deg, #D4A574, #FFFFFF, #D4A574, #FFFFFF, #D4A574);
+    background: linear-gradient(90deg, #D4A574, #FFD700, #FFFFFF, #FFD700, #D4A574);
     background-size: 400% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    animation: gradient 4s ease infinite;
+    animation: gradient 6s ease infinite;
+    filter: drop-shadow(0 0 10px rgba(212, 165, 116, 0.5));
   }
 
   .glass {
