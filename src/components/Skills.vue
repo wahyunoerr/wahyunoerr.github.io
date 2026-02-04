@@ -8,17 +8,17 @@
           v-scroll-animate="'fade-up'" 
           class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6"
         >
-          <span class="text-xs font-semibold text-accent uppercase tracking-wider">Keahlian</span>
+          <span class="text-xs font-semibold text-accent uppercase tracking-wider">Skills</span>
         </div>
         
         <h2 v-scroll-animate:100="'fade-up'" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
-          Teknologi yang Saya 
-          <span class="text-gradient">Kuasai</span>
+          Technologies I 
+          <span class="text-gradient">Work With</span>
         </h2>
         
         <p v-scroll-animate:200="'fade-up'" class="text-zinc-400 leading-relaxed">
-          Berikut adalah teknologi dan tools yang saya gunakan untuk membangun 
-          aplikasi web modern dan solusi digital berkualitas tinggi.
+          Here are the technologies and tools I use to build modern web applications 
+          and high-quality digital solutions.
         </p>
       </div>
 
@@ -61,7 +61,7 @@
       <div class="mt-20">
         <div v-scroll-animate="'fade-up'" class="text-center mb-10">
           <h3 class="text-xl font-semibold text-white mb-2">Tools & Environment</h3>
-          <p class="text-zinc-500 text-sm">Software pendukung yang saya gunakan sehari-hari</p>
+          <p class="text-zinc-500 text-sm">Software and tools I use in my daily workflow</p>
         </div>
         
         <div v-scroll-animate:100="'fade-up'" class="flex flex-wrap justify-center gap-4">
@@ -83,7 +83,7 @@
 const skills = [
   {
     name: 'Laravel',
-    description: 'PHP Framework untuk aplikasi web enterprise',
+    description: 'PHP Framework for enterprise web apps',
     icon: '/assets/img/about/laravel.png',
     bgColor: 'rgba(255, 45, 32, 0.1)',
   },
@@ -95,31 +95,31 @@ const skills = [
   },
   {
     name: 'JavaScript',
-    description: 'Interaktivitas dan logika frontend',
+    description: 'Frontend interactivity & logic',
     icon: '/assets/img/about/js.png',
     bgColor: 'rgba(247, 223, 30, 0.1)',
   },
   {
     name: 'MySQL',
-    description: 'Database management system',
+    description: 'Relational database management',
     icon: '/assets/img/about/mysql.png',
     bgColor: 'rgba(0, 117, 143, 0.1)',
   },
   {
     name: 'HTML5',
-    description: 'Struktur dan semantic markup',
+    description: 'Structure & semantic markup',
     icon: '/assets/img/about/html5.png',
     bgColor: 'rgba(227, 79, 38, 0.1)',
   },
   {
     name: 'CSS3',
-    description: 'Styling dan responsive design',
+    description: 'Styling & responsive design',
     icon: '/assets/img/about/css.png',
     bgColor: 'rgba(21, 114, 182, 0.1)',
   },
   {
     name: 'Bootstrap',
-    description: 'CSS Framework untuk UI cepat',
+    description: 'Rapid UI development framework',
     icon: '/assets/img/about/boot.png',
     bgColor: 'rgba(121, 82, 179, 0.1)',
   },

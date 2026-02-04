@@ -12,17 +12,17 @@
             v-scroll-animate="'fade-up'" 
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6"
           >
-            <span class="text-xs font-semibold text-accent uppercase tracking-wider">Kontak</span>
+            <span class="text-xs font-semibold text-accent uppercase tracking-wider">Contact</span>
           </div>
           
           <h2 v-scroll-animate:100="'fade-up'" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
-            Mari Bekerja
-            <span class="text-gradient">Bersama</span>
+            Let's Work
+            <span class="text-gradient">Together</span>
           </h2>
           
           <p v-scroll-animate:200="'fade-up'" class="text-zinc-400 leading-relaxed max-w-xl mx-auto">
-            Tertarik untuk berkolaborasi atau punya proyek yang ingin didiskusikan? 
-            Jangan ragu untuk menghubungi saya.
+            Looking for a dedicated developer for your next project? 
+            I'd love to hear from you and discuss how I can help bring your ideas to life.
           </p>
         </div>
 
@@ -54,9 +54,9 @@
         </div>
 
         <div v-scroll-animate:400="'scale-up'" class="text-center">
-          <p class="text-zinc-500 mb-6">Atau langsung kirim pesan via WhatsApp</p>
+          <p class="text-zinc-500 mb-6">Or send me a message directly via WhatsApp</p>
           <a 
-            href="https://wa.me/6282286203247?text=Halo%20Wahyu,%20saya%20tertarik%20untuk%20berdiskusi%20tentang%20proyek." 
+            href="https://wa.me/6282286203247?text=Hi%20Wahyu,%20I'm%20interested%20in%20discussing%20a%20project%20with%20you." 
             target="_blank"
             class="btn-primary text-lg px-8 py-4"
           >
@@ -129,7 +129,7 @@ const contacts = [
     iconClass: 'text-red-400',
   },
   {
-    label: 'Telepon',
+    label: 'Phone',
     value: '+62 822 8620 3247',
     href: 'tel:+6282286203247',
     icon: PhoneIcon,
@@ -137,7 +137,7 @@ const contacts = [
     iconClass: 'text-green-400',
   },
   {
-    label: 'Lokasi',
+    label: 'Location',
     value: 'Pekanbaru, Riau',
     href: 'https://maps.google.com/?q=Pekanbaru,Riau',
     icon: LocationIcon,

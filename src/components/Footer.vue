@@ -10,8 +10,8 @@
             <span class="text-accent">.</span>
           </a>
           <p class="text-zinc-500 text-sm leading-relaxed mb-6">
-            Web Developer yang passionate dalam membangun solusi digital 
-            yang efisien dan user-friendly.
+            Full-Stack Web Developer passionate about building efficient 
+            and user-friendly digital solutions.
           </p>
           <div class="flex items-center gap-3">
             <a 
@@ -43,7 +43,7 @@
         </div>
 
         <div>
-          <h4 class="text-white font-semibold mb-4">Kontak</h4>
+          <h4 class="text-white font-semibold mb-4">Contact</h4>
           <ul class="space-y-3">
             <li>
               <a 
@@ -127,10 +127,10 @@ const socials = [
 ]
 
 const quickLinks = [
-  { label: 'Beranda', href: '#' },
-  { label: 'Tentang Saya', href: '#about' },
-  { label: 'Keahlian', href: '#skills' },
+  { label: 'Home', href: '#' },
+  { label: 'About Me', href: '#about' },
+  { label: 'Skills', href: '#skills' },
   { label: 'Portfolio', href: '#projects' },
-  { label: 'Kontak', href: '#contact' },
+  { label: 'Contact', href: '#contact' },
 ]
 </script>

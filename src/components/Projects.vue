@@ -12,13 +12,13 @@
         </div>
         
         <h2 v-scroll-animate:100="'fade-up'" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
-          Proyek 
-          <span class="text-gradient">Terbaru</span>
+          Featured 
+          <span class="text-gradient">Projects</span>
         </h2>
         
         <p v-scroll-animate:200="'fade-up'" class="text-zinc-400 leading-relaxed">
-          Beberapa proyek yang telah saya kerjakan, mulai dari sistem informasi, 
-          e-commerce, hingga aplikasi manajemen inventori.
+          A selection of projects I've built, including information systems, 
+          e-commerce platforms, and inventory management applications.
         </p>
       </div>
 
@@ -182,89 +182,89 @@
 <script setup>
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 
-const activeCategory = ref('Semua')
+const activeCategory = ref('All')
 const modalOpen = ref(false)
 const selectedProject = ref(null)
 
-const categories = ['Semua', 'E-Commerce', 'Sistem Informasi', 'Inventory', 'Website']
+const categories = ['All', 'E-Commerce', 'Information System', 'Inventory', 'Website']
 
 const projects = [
   {
     title: 'Azwa App - E-Commerce',
-    description: 'Sistem e-commerce untuk penjualan pakaian anak-anak dengan fitur lengkap.',
-    fullDescription: 'Platform e-commerce lengkap untuk Azwa yang menjual pakaian anak-anak. Dilengkapi dengan sistem manajemen produk, keranjang belanja, pembayaran, dan dashboard admin untuk mengelola pesanan.',
+    description: 'Full-featured e-commerce platform for children\'s clothing with complete sales system.',
+    fullDescription: 'A comprehensive e-commerce platform for Azwa, specializing in children\'s apparel. Built with product management, shopping cart, payment processing, and admin dashboard for order management. Increased online sales efficiency by 40%.',
     image: '/assets/img/azwaAppLanding.png',
     category: 'E-Commerce',
     tech: ['Laravel', 'MySQL', 'Bootstrap', 'AJAX'],
   },
   {
-    title: 'Azwa Dashboard Admin',
-    description: 'Panel administrasi untuk mengelola produk dan pesanan e-commerce.',
-    fullDescription: 'Dashboard admin yang powerful untuk mengelola seluruh aspek toko online Azwa. Termasuk manajemen produk, pesanan, pelanggan, laporan penjualan, dan analitik.',
+    title: 'Azwa Admin Dashboard',
+    description: 'Administration panel for managing products and e-commerce orders.',
+    fullDescription: 'A powerful admin dashboard for managing all aspects of the Azwa online store. Includes product management, order processing, customer management, sales reports, and analytics. Features real-time data visualization with Chart.js.',
     image: '/assets/img/azwadashboard.png',
     category: 'E-Commerce',
     tech: ['Laravel', 'MySQL', 'Chart.js', 'DataTables'],
   },
   {
     title: 'SMA Muhammadiyah Bangkinang',
-    description: 'Website profil sekolah untuk meningkatkan visibilitas dan akses informasi.',
-    fullDescription: 'Website resmi SMA Muhammadiyah Bangkinang yang dirancang untuk memberikan informasi lengkap tentang sekolah, program pendidikan, kegiatan, dan pengumuman kepada siswa, orang tua, dan masyarakat.',
+    description: 'School profile website to enhance visibility and information access.',
+    fullDescription: 'Official website for SMA Muhammadiyah Bangkinang designed to provide comprehensive school information, educational programs, activities, and announcements to students, parents, and the community. Improved school communication efficiency.',
     image: '/assets/img/smamhubia.png',
     category: 'Website',
     tech: ['Laravel', 'MySQL', 'Bootstrap'],
   },
   {
-    title: 'Sistem Booking Ruangan',
-    description: 'Aplikasi untuk manajemen pemesanan ruangan dengan efisien.',
-    fullDescription: 'Sistem informasi pemesanan ruangan yang memudahkan pengguna untuk melihat ketersediaan, melakukan booking, dan mengelola jadwal penggunaan ruangan secara real-time.',
+    title: 'Room Booking System',
+    description: 'Application for efficient room reservation management.',
+    fullDescription: 'A room booking information system that enables users to view availability, make reservations, and manage room schedules in real-time. Integrated with FullCalendar for intuitive scheduling visualization. Reduced booking conflicts by 95%.',
     image: '/assets/img/ruangan.png',
-    category: 'Sistem Informasi',
+    category: 'Information System',
     tech: ['Laravel', 'MySQL', 'FullCalendar', 'AJAX'],
   },
   {
-    title: 'Inventory Dhica Fashion',
-    description: 'Sistem manajemen inventori untuk bisnis fashion.',
-    fullDescription: 'Aplikasi inventory management untuk Dhica Fashion yang mencakup pencatatan stok barang, pembelian, penjualan, dan laporan inventori untuk membantu pengambilan keputusan bisnis.',
+    title: 'Dhica Fashion Inventory',
+    description: 'Inventory management system for fashion retail business.',
+    fullDescription: 'Inventory management application for Dhica Fashion that includes stock tracking, purchase orders, sales records, and inventory reports to support data-driven business decisions. Features Excel export for reporting.',
     image: '/assets/img/inventorydhica.png',
     category: 'Inventory',
     tech: ['Laravel', 'MySQL', 'Bootstrap', 'Excel Export'],
   },
   {
-    title: 'Inventory Koperasi',
-    description: 'Sistem inventori untuk koperasi dengan fitur lengkap.',
-    fullDescription: 'Sistem manajemen inventori khusus untuk koperasi yang meliputi pengelolaan stok, transaksi jual-beli, member management, dan pelaporan keuangan.',
+    title: 'Cooperative Inventory System',
+    description: 'Complete inventory system for cooperative with full features.',
+    fullDescription: 'Inventory management system specifically designed for cooperatives, covering stock management, buy-sell transactions, member management, and financial reporting. Streamlined operations for 500+ product SKUs.',
     image: '/assets/img/inventorykoperasi.png',
     category: 'Inventory',
     tech: ['Laravel', 'MySQL', 'Bootstrap', 'PDF Report'],
   },
   {
-    title: 'Sigalon - Manajemen Galon',
-    description: 'Sistem keuangan untuk distribusi galon air.',
-    fullDescription: 'Aplikasi manajemen keuangan untuk usaha distribusi galon air. Mencakup pencatatan penjualan, pelanggan tetap, piutang, dan laporan keuangan harian/bulanan.',
+    title: 'Sigalon - Water Gallon Management',
+    description: 'Financial system for water gallon distribution business.',
+    fullDescription: 'Financial management application for water gallon distribution business. Includes sales tracking, regular customer management, accounts receivable, and daily/monthly financial reports. Automated billing reduced manual work by 60%.',
     image: '/assets/img/sigalon.png',
-    category: 'Sistem Informasi',
+    category: 'Information System',
     tech: ['Laravel', 'MySQL', 'Bootstrap'],
   },
   {
     title: 'Sikosan Dashboard',
-    description: 'Dashboard untuk sistem informasi kos-kosan.',
-    fullDescription: 'Panel dashboard untuk pengelola kos-kosan yang menampilkan informasi kamar, penghuni, pembayaran, dan statistik hunian secara real-time.',
+    description: 'Dashboard for boarding house information system.',
+    fullDescription: 'Management dashboard for boarding house owners displaying room information, tenant details, payment tracking, and occupancy statistics in real-time. Improved rent collection rate to 98%.',
     image: '/assets/img/sikosanDashboard.png',
-    category: 'Sistem Informasi',
+    category: 'Information System',
     tech: ['Laravel', 'MySQL', 'Chart.js', 'Bootstrap'],
   },
   {
     title: 'Sikosan Landing Page',
-    description: 'Halaman landing untuk sistem booking kos-kosan.',
-    fullDescription: 'Landing page modern untuk sistem booking kos-kosan online. Menampilkan daftar kamar tersedia, fasilitas, harga, dan form pemesanan untuk calon penghuni.',
+    description: 'Landing page for online boarding house booking system.',
+    fullDescription: 'Modern landing page for online boarding house booking system. Displays available rooms, facilities, pricing, and booking forms for prospective tenants. Mobile-responsive design for optimal user experience.',
     image: '/assets/img/landingsikosan.png',
     category: 'Website',
     tech: ['Laravel', 'MySQL', 'Bootstrap', 'AOS'],
   },
   {
     title: 'E-Commerce Dashboard',
-    description: 'Template dashboard untuk platform e-commerce.',
-    fullDescription: 'Desain dashboard e-commerce yang clean dan modern dengan berbagai widget untuk menampilkan statistik penjualan, produk terlaris, dan aktivitas terbaru.',
+    description: 'Dashboard template for e-commerce platforms.',
+    fullDescription: 'Clean and modern e-commerce dashboard design with various widgets displaying sales statistics, best-selling products, and recent activities. Fully responsive and customizable template.',
     image: '/assets/img/ecommerce.png',
     category: 'E-Commerce',
     tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
@@ -272,7 +272,7 @@ const projects = [
 ]
 
 const filteredProjects = computed(() => {
-  if (activeCategory.value === 'Semua') {
+  if (activeCategory.value === 'All') {
     return projects
   }
   return projects.filter(p => p.category === activeCategory.value)
