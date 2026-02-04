@@ -23,35 +23,35 @@
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
             </span>
-            <span class="text-sm font-medium text-accent">Tersedia untuk proyek baru</span>
+            <span class="text-sm font-medium text-accent">Open to Work</span>
           </div>
 
           <h1
             class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight mb-6 animate-slide-up"
           >
-            <span class="text-white">Web</span>
+            <span class="text-white">Full-Stack</span>
             <br />
-            <span class="text-gradient">Developer</span>
+            <span class="text-gradient">Web Developer</span>
           </h1>
 
           <p
             class="text-lg text-zinc-400 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed animate-slide-up animate-delay-200"
           >
-            Membangun aplikasi web yang efisien dan scalable dengan Laravel, PHP, dan teknologi modern lainnya. Berbasis
-            di Pekanbaru, Indonesia.
+            I build scalable, high-performance web applications using <span class="text-white font-medium">Laravel</span> and modern technologies. 
+            Passionate about clean code, efficient systems, and delivering real business value.
           </p>
 
           <div
             class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12 animate-slide-up animate-delay-300"
           >
             <a href="#projects" class="btn-primary">
-              <span>Lihat Portfolio</span>
+              <span>View My Work</span>
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
             </a>
             <a href="#contact" class="btn-secondary">
-              <span>Hubungi Saya</span>
+              <span>Get In Touch</span>
             </a>
           </div>
 
@@ -94,8 +94,8 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="text-xs text-zinc-400">Pengalaman</p>
-                  <p class="text-sm font-semibold text-white">2+ Tahun</p>
+                  <p class="text-xs text-zinc-400">Experience</p>
+                  <p class="text-sm font-semibold text-white">2+ Years</p>
                 </div>
               </div>
             </div>
@@ -113,8 +113,8 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="text-xs text-zinc-400">Proyek Selesai</p>
-                  <p class="text-sm font-semibold text-white">10+ Proyek</p>
+                  <p class="text-xs text-zinc-400">Projects Delivered</p>
+                  <p class="text-sm font-semibold text-white">10+ Projects</p>
                 </div>
               </div>
             </div>
