@@ -162,7 +162,7 @@
               <h3 class="text-2xl font-bold text-white mb-3">{{ selectedProject.title }}</h3>
               <p class="text-zinc-400 mb-6 leading-relaxed">{{ selectedProject.fullDescription }}</p>
               
-              <div class="flex flex-wrap gap-2">
+              <div class="flex flex-wrap gap-2 mb-6">
                 <span 
                   v-for="tech in selectedProject.tech" 
                   :key="tech"
@@ -171,6 +171,19 @@
                   {{ tech }}
                 </span>
               </div>
+
+              <!-- Visit Site Button for Live Projects -->
+              <a 
+                v-if="selectedProject.url"
+                :href="selectedProject.url"
+                target="_blank"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-primary font-medium hover:bg-accent-light transition-colors"
+              >
+                <span>Visit Live Site</span>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -186,9 +199,27 @@ const activeCategory = ref('All')
 const modalOpen = ref(false)
 const selectedProject = ref(null)
 
-const categories = ['All', 'E-Commerce', 'Information System', 'Inventory', 'Website']
+const categories = ['All', 'Live Project', 'E-Commerce', 'Information System', 'Inventory', 'Website']
 
 const projects = [
+  {
+    title: 'Wutama Logistics System',
+    description: 'Enterprise logistics management system for shipping and contract tracking.',
+    fullDescription: 'A comprehensive logistics management platform for Wutama handling end-to-end shipping operations. Features include shipment tracking, fleet management, supplier contracts, invoice generation, billing/collection management, and profit & loss reporting. Deployed on VPS with real-time data processing for efficient logistics operations.',
+    image: '/assets/img/wutama.png',
+    category: 'Live Project',
+    tech: ['Laravel', 'Filament', 'MySQL', 'Tailwind CSS'],
+    url: 'https://wutama.my.id',
+  },
+  {
+    title: 'VapePekanbaru Staff Portal',
+    description: 'GPS-based attendance and HR management system for staff operations.',
+    fullDescription: 'A complete HR management system featuring GPS-based attendance with geofencing, shift scheduling, leave management, task assignment with submissions, payroll processing, expense tracking, and employee leaderboards. Built with Livewire for real-time interactions. Deployed on VPS serving daily staff operations.',
+    image: '/assets/img/vapekanbaru.png',
+    category: 'Live Project',
+    tech: ['Laravel', 'Filament', 'Livewire', 'MySQL'],
+    url: 'https://staff.vapekanbaru.com',
+  },
   {
     title: 'Azwa App - E-Commerce',
     description: 'Full-featured e-commerce platform for children\'s clothing with complete sales system.',
