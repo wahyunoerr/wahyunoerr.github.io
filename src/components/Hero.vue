@@ -31,7 +31,7 @@
           >
             <span class="text-white">Full-Stack</span>
             <br />
-            <span class="text-gradient">Web Developer</span>
+            <span class="text-gradient" data-text="Web Developer">Web Developer</span>
           </h1>
 
           <p
