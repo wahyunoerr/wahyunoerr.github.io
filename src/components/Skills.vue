@@ -94,16 +94,40 @@ const skills = [
     bgColor: 'rgba(119, 123, 180, 0.1)',
   },
   {
+    name: 'Livewire',
+    description: 'Full-stack framework for Laravel',
+    icon: '/assets/img/about/livewire.svg',
+    bgColor: 'rgba(251, 112, 167, 0.1)',
+  },
+  {
+    name: 'Alpine.js',
+    description: 'Lightweight JavaScript framework',
+    icon: '/assets/img/about/alpinejs.svg',
+    bgColor: 'rgba(119, 197, 213, 0.1)',
+  },
+  {
     name: 'JavaScript',
     description: 'Frontend interactivity & logic',
     icon: '/assets/img/about/js.png',
     bgColor: 'rgba(247, 223, 30, 0.1)',
   },
   {
+    name: 'Tailwind CSS',
+    description: 'Utility-first CSS framework',
+    icon: '/assets/img/about/tailwindcss.svg',
+    bgColor: 'rgba(56, 189, 248, 0.1)',
+  },
+  {
     name: 'MySQL',
     description: 'Relational database management',
     icon: '/assets/img/about/mysql.png',
     bgColor: 'rgba(0, 117, 143, 0.1)',
+  },
+  {
+    name: 'PostgreSQL',
+    description: 'Advanced open-source database',
+    icon: '/assets/img/about/postgresql.svg',
+    bgColor: 'rgba(51, 103, 145, 0.1)',
   },
   {
     name: 'HTML5',
