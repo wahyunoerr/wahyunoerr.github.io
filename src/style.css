@@ -35,7 +35,7 @@
 
 @layer components {
   .text-gradient {
-    @apply bg-gradient-to-r from-accent via-lime-400 to-accent bg-300% animate-gradient bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent via-amber-300 to-accent bg-300% animate-gradient bg-clip-text text-transparent;
   }
 
   .glass {

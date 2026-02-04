@@ -9,7 +9,9 @@ export default {
       colors: {
         primary: '#0a0a0a',
         secondary: '#141414',
-        accent: '#c9f31d',
+        accent: '#D4A574',
+        'accent-light': '#E8C9A8',
+        'accent-dark': '#B8956A',
         muted: '#71717a',
       },
       fontFamily: {

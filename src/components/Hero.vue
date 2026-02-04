@@ -2,7 +2,7 @@
   <section class="relative min-h-screen flex items-center overflow-hidden">
     <div class="absolute inset-0 overflow-hidden">
       <div class="absolute top-1/4 -left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl opacity-30"></div>
-      <div class="absolute bottom-1/4 -right-1/4 w-96 h-96 bg-lime-500/20 rounded-full blur-3xl opacity-20"></div>
+      <div class="absolute bottom-1/4 -right-1/4 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl opacity-20"></div>
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#0a0a0a_70%)]"></div>
     </div>
 
@@ -72,7 +72,7 @@
         <div class="order-1 lg:order-2 flex justify-center animate-scale-in animate-delay-200">
           <div class="relative">
             <div
-              class="absolute inset-0 bg-gradient-to-br from-accent/30 to-lime-500/30 rounded-3xl blur-2xl opacity-40 animate-pulse-slow"
+              class="absolute inset-0 bg-gradient-to-br from-accent/30 to-amber-600/30 rounded-3xl blur-2xl opacity-40 animate-pulse-slow"
             ></div>
             <div
               class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border-2 border-white/10"

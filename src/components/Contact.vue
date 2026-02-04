@@ -2,7 +2,7 @@
   <section id="contact" class="section-padding relative overflow-hidden">
     <div class="absolute inset-0">
       <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
-      <div class="absolute top-1/4 right-1/4 w-64 h-64 bg-lime-500/10 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/4 right-1/4 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl"></div>
     </div>
     
     <div class="container-custom relative z-10">
