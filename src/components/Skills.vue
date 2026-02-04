@@ -134,6 +134,8 @@ const skills = [
 const tools = [
   'Visual Studio Code',
   'Git & GitHub',
+  'Linux',
+  'VPS Deployment',
   'Postman',
   'phpMyAdmin',
   'XAMPP',
