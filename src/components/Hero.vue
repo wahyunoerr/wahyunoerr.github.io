@@ -96,7 +96,7 @@
                 </div>
                 <div>
                   <p class="text-xs text-zinc-400">Experience</p>
-                  <p class="text-sm font-semibold text-white">4+ Years</p>
+                  <p class="text-sm font-semibold text-white">3+ Years</p>
                 </div>
               </div>
             </div>
