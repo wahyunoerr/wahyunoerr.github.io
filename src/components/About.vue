@@ -51,7 +51,7 @@
           <div v-scroll-animate:200="'fade-up'" class="space-y-4 text-zinc-400 leading-relaxed mb-8">
             <p>
               I'm Wahyu Nur, a Full-Stack Web Developer based in Pekanbaru, Indonesia with 
-              <span class="text-white font-medium">2+ years of experience</span> building web applications 
+              <span class="text-white font-medium">3+ years of experience</span> building web applications 
               that solve real business problems. I specialize in the Laravel ecosystem and have 
               successfully delivered <span class="text-white font-medium">10+ production-ready projects</span>.
             </p>
