@@ -90,7 +90,7 @@ const skills = [
   {
     name: 'PHP',
     description: 'Server-side scripting language',
-    icon: '/assets/img/about/php.png',
+    icon: '/assets/img/about/php.svg',
     bgColor: 'rgba(119, 123, 180, 0.1)',
   },
   {
@@ -138,7 +138,7 @@ const skills = [
   {
     name: 'CSS3',
     description: 'Styling & responsive design',
-    icon: '/assets/img/about/css.png',
+    icon: '/assets/img/about/css3.svg',
     bgColor: 'rgba(21, 114, 182, 0.1)',
   },
   {
@@ -150,7 +150,7 @@ const skills = [
   {
     name: 'jQuery & AJAX',
     description: 'DOM manipulation & async requests',
-    icon: '/assets/img/about/ajaxjquery.png',
+    icon: '/assets/img/about/jquery.svg',
     bgColor: 'rgba(0, 102, 153, 0.1)',
   },
 ]
