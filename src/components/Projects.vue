@@ -3,42 +3,46 @@
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/30 to-transparent"></div>
     
     <div class="container-custom relative z-10">
-      <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
         <div 
           v-scroll-animate="'fade-up'" 
-          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6"
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-4 sm:mb-6"
         >
           <span class="text-xs font-semibold text-accent uppercase tracking-wider">Portfolio</span>
         </div>
         
-        <h2 v-scroll-animate:100="'fade-up'" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+        <h2 v-scroll-animate:100="'fade-up'" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4 sm:mb-6">
           Featured 
           <span class="text-gradient">Projects</span>
         </h2>
         
-        <p v-scroll-animate:200="'fade-up'" class="text-zinc-400 leading-relaxed">
+        <p v-scroll-animate:200="'fade-up'" class="text-sm sm:text-base text-zinc-400 leading-relaxed px-2 sm:px-0">
           A selection of projects I've built, including information systems, 
           e-commerce platforms, and inventory management applications.
         </p>
       </div>
 
-      <div v-scroll-animate:300="'fade-up'" class="flex flex-wrap justify-center gap-2 mb-12">
-        <button 
-          v-for="category in categories" 
-          :key="category"
-          @click="activeCategory = category"
-          class="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300"
-          :class="[
-            activeCategory === category 
-              ? 'bg-accent text-primary' 
-              : 'bg-white/5 text-zinc-400 hover:bg-white/10 hover:text-white'
-          ]"
-        >
-          {{ category }}
-        </button>
+      <!-- Filter Buttons - Scrollable on mobile -->
+      <div v-scroll-animate:300="'fade-up'" class="mb-8 sm:mb-12 -mx-4 px-4 sm:mx-0 sm:px-0">
+        <div class="flex sm:flex-wrap sm:justify-center gap-2 overflow-x-auto pb-2 sm:pb-0 scrollbar-hide">
+          <button 
+            v-for="category in categories" 
+            :key="category"
+            @click="activeCategory = category"
+            class="px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 whitespace-nowrap flex-shrink-0"
+            :class="[
+              activeCategory === category 
+                ? 'bg-accent text-primary' 
+                : 'bg-white/5 text-zinc-400 hover:bg-white/10 hover:text-white'
+            ]"
+          >
+            {{ category }}
+          </button>
+        </div>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         <TransitionGroup 
           enter-active-class="transition-all duration-500"
           enter-from-class="opacity-0 scale-95"
@@ -51,7 +55,7 @@
             v-for="(project, index) in filteredProjects" 
             :key="project.title"
             v-scroll-animate="'fade-up'"
-            :style="{ transitionDelay: `${index * 100}ms` }"
+            :style="{ transitionDelay: `${index * 75}ms` }"
             class="group"
           >
             <div class="card card-hover h-full flex flex-col">
@@ -64,8 +68,8 @@
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-transparent opacity-60"></div>
                 
-                <div class="absolute top-4 left-4">
-                  <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent/90 text-primary">
+                <div class="absolute top-3 left-3 sm:top-4 sm:left-4">
+                  <span class="px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-medium bg-accent/90 text-primary">
                     {{ project.category }}
                   </span>
                 </div>
@@ -73,11 +77,11 @@
                 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <button 
                     @click="openModal(project)"
-                    class="p-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white 
+                    class="p-3 sm:p-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white 
                            hover:bg-accent hover:text-primary hover:border-accent transition-all duration-300
                            transform translate-y-4 group-hover:translate-y-0"
                   >
-                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                     </svg>
@@ -85,21 +89,27 @@
                 </div>
               </div>
               
-              <div class="p-6 flex-1 flex flex-col">
-                <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-accent transition-colors">
+              <div class="p-4 sm:p-6 flex-1 flex flex-col">
+                <h3 class="text-base sm:text-lg font-semibold text-white mb-2 group-hover:text-accent transition-colors">
                   {{ project.title }}
                 </h3>
-                <p class="text-sm text-zinc-500 mb-4 flex-1 line-clamp-2">
+                <p class="text-xs sm:text-sm text-zinc-500 mb-3 sm:mb-4 flex-1 line-clamp-2">
                   {{ project.description }}
                 </p>
                 
-                <div class="flex flex-wrap gap-2">
+                <div class="flex flex-wrap gap-1.5 sm:gap-2">
                   <span 
-                    v-for="tech in project.tech" 
+                    v-for="tech in project.tech.slice(0, 3)" 
                     :key="tech"
-                    class="px-2.5 py-1 rounded-md text-xs bg-white/5 text-zinc-400"
+                    class="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md text-[10px] sm:text-xs bg-white/5 text-zinc-400"
                   >
                     {{ tech }}
+                  </span>
+                  <span 
+                    v-if="project.tech.length > 3"
+                    class="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md text-[10px] sm:text-xs bg-white/5 text-zinc-400"
+                  >
+                    +{{ project.tech.length - 3 }}
                   </span>
                 </div>
               </div>
@@ -114,7 +124,7 @@
       <Transition name="modal">
         <div 
           v-if="modalOpen" 
-          class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8"
+          class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 lg:p-8"
           @click.self="closeModal"
           @keydown.esc="closeModal"
         >
@@ -126,16 +136,16 @@
           
           <!-- Modal Content -->
           <div 
-            class="modal-content relative w-full max-w-4xl max-h-[90vh] rounded-2xl bg-secondary border border-white/10 shadow-2xl overflow-hidden flex flex-col"
+            class="modal-content relative w-full max-w-4xl max-h-[95vh] sm:max-h-[90vh] rounded-xl sm:rounded-2xl bg-secondary border border-white/10 shadow-2xl overflow-hidden flex flex-col"
           >
             <!-- Close Button -->
             <button 
               @click="closeModal"
-              class="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/50 backdrop-blur-sm text-white 
+              class="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 p-2 sm:p-2.5 rounded-full bg-black/50 backdrop-blur-sm text-white 
                      hover:bg-accent hover:text-primary transition-all duration-300"
               aria-label="Close modal"
             >
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -150,23 +160,23 @@
                 />
               </div>
               <!-- Gradient overlay -->
-              <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-secondary to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 h-16 sm:h-20 bg-gradient-to-t from-secondary to-transparent"></div>
             </div>
             
             <!-- Content -->
-            <div class="p-6 overflow-y-auto flex-1" v-if="selectedProject">
-              <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-accent/20 text-accent mb-4">
+            <div class="p-4 sm:p-6 overflow-y-auto flex-1" v-if="selectedProject">
+              <span class="inline-block px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-medium bg-accent/20 text-accent mb-3 sm:mb-4">
                 {{ selectedProject.category }}
               </span>
               
-              <h3 class="text-2xl font-bold text-white mb-3">{{ selectedProject.title }}</h3>
-              <p class="text-zinc-400 mb-6 leading-relaxed">{{ selectedProject.fullDescription }}</p>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">{{ selectedProject.title }}</h3>
+              <p class="text-sm sm:text-base text-zinc-400 mb-4 sm:mb-6 leading-relaxed">{{ selectedProject.fullDescription }}</p>
               
-              <div class="flex flex-wrap gap-2 mb-6">
+              <div class="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
                 <span 
                   v-for="tech in selectedProject.tech" 
                   :key="tech"
-                  class="px-3 py-1.5 rounded-lg text-sm bg-white/5 text-zinc-300 border border-white/5"
+                  class="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-xs sm:text-sm bg-white/5 text-zinc-300 border border-white/5"
                 >
                   {{ tech }}
                 </span>
@@ -177,7 +187,7 @@
                 v-if="selectedProject.url"
                 :href="selectedProject.url"
                 target="_blank"
-                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-primary font-medium hover:bg-accent-light transition-colors"
+                class="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-accent text-primary text-sm sm:text-base font-medium hover:bg-accent-light transition-colors"
               >
                 <span>Visit Live Site</span>
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -1,8 +1,8 @@
 <template>
   <section class="relative min-h-screen flex items-center overflow-hidden">
     <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute top-1/4 -left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl opacity-30"></div>
-      <div class="absolute bottom-1/4 -right-1/4 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl opacity-20"></div>
+      <div class="absolute top-1/4 -left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-accent/20 rounded-full blur-3xl opacity-30"></div>
+      <div class="absolute bottom-1/4 -right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-amber-500/20 rounded-full blur-3xl opacity-20"></div>
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#0a0a0a_70%)]"></div>
     </div>
 
@@ -13,21 +13,21 @@
       "
     ></div>
 
-    <div class="container-custom relative z-10 pt-24">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+    <div class="container-custom relative z-10 pt-20 sm:pt-24 pb-8">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-8 items-center">
         <div class="order-2 lg:order-1 text-center lg:text-left">
           <div
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6 animate-fade-in"
+            class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-accent/10 border border-accent/20 mb-4 sm:mb-6 animate-fade-in"
           >
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
             </span>
-            <span class="text-sm font-medium text-accent">Open to Work</span>
+            <span class="text-xs sm:text-sm font-medium text-accent">Open to Work</span>
           </div>
 
           <h1
-            class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight mb-6 animate-slide-up"
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight mb-4 sm:mb-6 animate-slide-up"
           >
             <span class="text-white">Full-Stack</span>
             <br />
@@ -35,7 +35,7 @@
           </h1>
 
           <p
-            class="text-lg text-zinc-400 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed animate-slide-up animate-delay-200"
+            class="text-base sm:text-lg text-zinc-400 max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-8 leading-relaxed animate-slide-up animate-delay-200 px-2 sm:px-0"
           >
             I build scalable, high-performance web applications using
             <span class="text-white font-medium">Laravel</span> and modern technologies. Passionate about clean code,
@@ -43,29 +43,29 @@
           </p>
 
           <div
-            class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12 animate-slide-up animate-delay-300"
+            class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-12 animate-slide-up animate-delay-300 px-4 sm:px-0"
           >
-            <a href="#projects" class="btn-primary">
+            <a href="#projects" class="btn-primary justify-center sm:justify-start">
               <span>View My Work</span>
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
             </a>
-            <a href="#contact" class="btn-secondary">
+            <a href="#contact" class="btn-secondary justify-center sm:justify-start">
               <span>Get In Touch</span>
             </a>
           </div>
 
-          <div class="flex items-center gap-6 justify-center lg:justify-start animate-fade-in animate-delay-400">
+          <div class="flex items-center gap-4 sm:gap-6 justify-center lg:justify-start animate-fade-in animate-delay-400">
             <a
               v-for="social in socials"
               :key="social.name"
               :href="social.url"
               target="_blank"
               :aria-label="social.name"
-              class="p-3 rounded-full bg-white/5 border border-white/10 text-zinc-400 hover:text-accent hover:border-accent/50 hover:bg-accent/10 transition-all duration-300"
+              class="p-2.5 sm:p-3 rounded-full bg-white/5 border border-white/10 text-zinc-400 hover:text-accent hover:border-accent/50 hover:bg-accent/10 transition-all duration-300"
             >
-              <component :is="social.icon" class="w-5 h-5" />
+              <component :is="social.icon" class="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
           </div>
         </div>
@@ -76,16 +76,17 @@
               class="absolute inset-0 bg-gradient-to-br from-accent/30 to-amber-600/30 rounded-3xl blur-2xl opacity-40 animate-pulse-slow"
             ></div>
             <div
-              class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border-2 border-white/10"
+              class="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border-2 border-white/10"
             >
               <img src="/assets/img/profile-removebg.png" alt="Wahyu Nur" class="w-full h-full object-cover" />
               <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
             </div>
 
-            <div class="absolute -bottom-4 -right-4 px-5 py-3 glass rounded-xl animate-slide-up animate-delay-500">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
-                  <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <!-- Experience Badge - Repositioned for mobile -->
+            <div class="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 px-3 sm:px-5 py-2 sm:py-3 glass rounded-lg sm:rounded-xl animate-slide-up animate-delay-500">
+              <div class="flex items-center gap-2 sm:gap-3">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-accent/20 flex items-center justify-center">
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -95,16 +96,17 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="text-xs text-zinc-400">Experience</p>
-                  <p class="text-sm font-semibold text-white">3+ Years</p>
+                  <p class="text-[10px] sm:text-xs text-zinc-400">Experience</p>
+                  <p class="text-xs sm:text-sm font-semibold text-white">3+ Years</p>
                 </div>
               </div>
             </div>
 
-            <div class="absolute -top-4 -left-4 px-5 py-3 glass rounded-xl animate-slide-up animate-delay-400">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
-                  <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <!-- Projects Badge - Repositioned for mobile -->
+            <div class="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 px-3 sm:px-5 py-2 sm:py-3 glass rounded-lg sm:rounded-xl animate-slide-up animate-delay-400">
+              <div class="flex items-center gap-2 sm:gap-3">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-accent/20 flex items-center justify-center">
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -114,8 +116,8 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="text-xs text-zinc-400">Projects Delivered</p>
-                  <p class="text-sm font-semibold text-white">10+ Projects</p>
+                  <p class="text-[10px] sm:text-xs text-zinc-400">Projects</p>
+                  <p class="text-xs sm:text-sm font-semibold text-white">10+</p>
                 </div>
               </div>
             </div>

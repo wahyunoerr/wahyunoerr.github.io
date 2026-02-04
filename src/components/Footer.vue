@@ -1,36 +1,36 @@
 <template>
-  <footer class="relative pt-20 pb-8 border-t border-white/5">
+  <footer class="relative pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-8 border-t border-white/5">
     <div class="absolute inset-0 bg-gradient-to-t from-secondary/50 to-transparent"></div>
 
     <div class="container-custom relative z-10">
-      <div class="grid md:grid-cols-3 gap-12 mb-16">
-        <div>
-          <a href="#" class="inline-block text-2xl font-display font-bold tracking-tight mb-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12 md:mb-16">
+        <div class="sm:col-span-2 md:col-span-1">
+          <a href="#" class="inline-block text-xl sm:text-2xl font-display font-bold tracking-tight mb-3 sm:mb-4">
             <span class="text-white">wnur</span>
             <span class="text-accent">.id</span>
           </a>
-          <p class="text-zinc-500 text-sm leading-relaxed mb-6">
+          <p class="text-zinc-500 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
             Full-Stack Web Developer passionate about building efficient and user-friendly digital solutions.
           </p>
-          <div class="flex items-center gap-3">
+          <div class="flex items-center gap-2 sm:gap-3">
             <a
               v-for="social in socials"
               :key="social.name"
               :href="social.url"
               target="_blank"
               :aria-label="social.name"
-              class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-accent hover:border-accent/50 hover:bg-accent/10 transition-all duration-300"
+              class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-accent hover:border-accent/50 hover:bg-accent/10 transition-all duration-300"
             >
-              <component :is="social.icon" class="w-4 h-4" />
+              <component :is="social.icon" class="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </a>
           </div>
         </div>
 
         <div>
-          <h4 class="text-white font-semibold mb-4">Quick Links</h4>
-          <ul class="space-y-3">
+          <h4 class="text-white font-semibold text-sm sm:text-base mb-3 sm:mb-4">Quick Links</h4>
+          <ul class="space-y-2 sm:space-y-3">
             <li v-for="link in quickLinks" :key="link.label">
-              <a :href="link.href" class="text-zinc-500 hover:text-accent transition-colors text-sm">
+              <a :href="link.href" class="text-zinc-500 hover:text-accent transition-colors text-xs sm:text-sm">
                 {{ link.label }}
               </a>
             </li>
@@ -38,14 +38,14 @@
         </div>
 
         <div>
-          <h4 class="text-white font-semibold mb-4">Contact</h4>
-          <ul class="space-y-3">
+          <h4 class="text-white font-semibold text-sm sm:text-base mb-3 sm:mb-4">Contact</h4>
+          <ul class="space-y-2 sm:space-y-3">
             <li>
               <a
                 href="mailto:wahyunoer1001@gmail.com"
-                class="text-zinc-500 hover:text-accent transition-colors text-sm flex items-center gap-2"
+                class="text-zinc-500 hover:text-accent transition-colors text-xs sm:text-sm flex items-center gap-2"
               >
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -53,16 +53,16 @@
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                wahyunoer1001@gmail.com
+                <span class="break-all">wahyunoer1001@gmail.com</span>
               </a>
             </li>
             <li>
               <a
                 href="https://wa.me/6282286203247"
                 target="_blank"
-                class="text-zinc-500 hover:text-accent transition-colors text-sm flex items-center gap-2"
+                class="text-zinc-500 hover:text-accent transition-colors text-xs sm:text-sm flex items-center gap-2"
               >
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -73,8 +73,8 @@
                 +62 822 8620 3247
               </a>
             </li>
-            <li class="text-zinc-500 text-sm flex items-center gap-2">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <li class="text-zinc-500 text-xs sm:text-sm flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -94,9 +94,9 @@
         </div>
       </div>
 
-      <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p class="text-zinc-600 text-sm">&copy; {{ currentYear }} Wahyu Nur. All rights reserved.</p>
-        <p class="text-zinc-600 text-sm">Built with Vue.js & Tailwind CSS</p>
+      <div class="pt-6 sm:pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
+        <p class="text-zinc-600 text-xs sm:text-sm">&copy; {{ currentYear }} Wahyu Nur. All rights reserved.</p>
+        <p class="text-zinc-600 text-xs sm:text-sm">Built with Vue.js & Tailwind CSS</p>
       </div>
     </div>
   </footer>
