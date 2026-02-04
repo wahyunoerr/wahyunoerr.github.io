@@ -84,7 +84,7 @@ const skills = [
   {
     name: 'Laravel',
     description: 'PHP Framework for enterprise web apps',
-    icon: '/assets/img/about/laravel.png',
+    icon: '/assets/img/about/laravel.svg',
     bgColor: 'rgba(255, 45, 32, 0.1)',
   },
   {
@@ -106,9 +106,15 @@ const skills = [
     bgColor: 'rgba(119, 197, 213, 0.1)',
   },
   {
+    name: 'Vue.js',
+    description: 'Progressive JavaScript framework',
+    icon: '/assets/img/about/vuejs.svg',
+    bgColor: 'rgba(65, 184, 131, 0.1)',
+  },
+  {
     name: 'JavaScript',
     description: 'Frontend interactivity & logic',
-    icon: '/assets/img/about/js.png',
+    icon: '/assets/img/about/javascript.svg',
     bgColor: 'rgba(247, 223, 30, 0.1)',
   },
   {
@@ -120,7 +126,7 @@ const skills = [
   {
     name: 'MySQL',
     description: 'Relational database management',
-    icon: '/assets/img/about/mysql.png',
+    icon: '/assets/img/about/mysql.svg',
     bgColor: 'rgba(0, 117, 143, 0.1)',
   },
   {
@@ -132,7 +138,7 @@ const skills = [
   {
     name: 'HTML5',
     description: 'Structure & semantic markup',
-    icon: '/assets/img/about/html5.png',
+    icon: '/assets/img/about/html5.svg',
     bgColor: 'rgba(227, 79, 38, 0.1)',
   },
   {
@@ -144,7 +150,7 @@ const skills = [
   {
     name: 'Bootstrap',
     description: 'Rapid UI development framework',
-    icon: '/assets/img/about/boot.png',
+    icon: '/assets/img/about/bootstrap.svg',
     bgColor: 'rgba(121, 82, 179, 0.1)',
   },
   {

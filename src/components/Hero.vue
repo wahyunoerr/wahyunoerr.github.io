@@ -37,8 +37,9 @@
           <p
             class="text-lg text-zinc-400 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed animate-slide-up animate-delay-200"
           >
-            I build scalable, high-performance web applications using <span class="text-white font-medium">Laravel</span> and modern technologies. 
-            Passionate about clean code, efficient systems, and delivering real business value.
+            I build scalable, high-performance web applications using
+            <span class="text-white font-medium">Laravel</span> and modern technologies. Passionate about clean code,
+            efficient systems, and delivering real business value.
           </p>
 
           <div
@@ -95,7 +96,7 @@
                 </div>
                 <div>
                   <p class="text-xs text-zinc-400">Experience</p>
-                  <p class="text-sm font-semibold text-white">2+ Years</p>
+                  <p class="text-sm font-semibold text-white">4+ Years</p>
                 </div>
               </div>
             </div>
